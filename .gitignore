@@ -15,6 +15,7 @@ Thumbs.db
 .env.*
 !.env.example
 !.env.test
+static/config.json
 
 # Vite
 vite.config.js.timestamp-*
