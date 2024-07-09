@@ -5,6 +5,7 @@ node_modules
 .vercel
 /.svelte-kit
 /build
+/static/config.json
 
 # OS
 .DS_Store
@@ -15,7 +16,6 @@ Thumbs.db
 .env.*
 !.env.example
 !.env.test
-static/config.json
 
 # Vite
 vite.config.js.timestamp-*
