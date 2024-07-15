@@ -10,3 +10,5 @@ export interface ConfigV0 extends ConfigSkeleton {
         clientType?: 'server' | 'laptop' | 'desktop';
     }[];
 }
+
+export type AnyConfig = ConfigV0 | (ConfigSkeleton & Record<string, any>);

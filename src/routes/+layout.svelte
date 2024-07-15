@@ -1,7 +1,11 @@
 <script lang='ts'>
+	import type { LayoutData } from "./$types";
     import "../app.css"
 	import {version as appVersion} from '$app/environment'
-    import logo from "../lib/assets/screen-share.svg"
+    import logo from "$lib/assets/screen-share.svg"
+
+	console.info(`Sentry ${appVersion}
+https://github.com/mswider/sentry`)
 
     function handleMediaQuery() {
 		document.body.parentElement!.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -15,6 +19,14 @@
 			.matchMedia('(prefers-color-scheme: dark)')
 			.addEventListener('change', handleMediaQuery);
 	}
+
+	export let data: LayoutData;
+	if (data.status === 200) {
+		const config = data.data.config;
+		console.log({config});
+	} else {
+		console.warn('error loading layout:', data);
+	}
 </script>
 
 <nav class="navbar bg-base-300">
@@ -26,4 +38,5 @@
 		{/if}
     </div>
 </nav>
-<slot></slot>
+<slot>
+</slot>

@@ -9,6 +9,9 @@ const config = {
 		adapter: adapter({ fallback: 'index.html', precompress: false }),
 		version: {
 			name: child_process.execSync('git describe --tags --abbrev=0').toString().trim()
+		},
+		alias: {
+			'lib/*': 'lib/*'
 		}
 	}
 };
