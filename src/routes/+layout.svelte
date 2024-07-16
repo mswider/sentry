@@ -1,5 +1,6 @@
 <script lang='ts'>
 	import type { LayoutData } from "./$types";
+	import type { Action } from "svelte/action";
     import "../app.css"
 	import {version as appVersion} from '$app/environment'
     import logo from "$lib/assets/screen-share.svg"
@@ -8,12 +9,13 @@
 	console.info(`Sentry ${appVersion}
 https://github.com/mswider/sentry`)
 
+	export let data: LayoutData;
+
     function handleMediaQuery() {
 		document.body.parentElement!.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
 			? 'forest'
 			: 'nord';
 	}
-
 	if (window.matchMedia) {
 		handleMediaQuery();
 		window
@@ -21,7 +23,12 @@ https://github.com/mswider/sentry`)
 			.addEventListener('change', handleMediaQuery);
 	}
 
-	export let data: LayoutData;
+	const focus: Action<HTMLDialogElement> = (node) => {
+		if (data.status !== 200) {
+			node.showModal();
+		}
+	};
+
 	if (data.status === 200) {
 		const config = data.data.config;
 		console.log({config});
@@ -41,5 +48,18 @@ https://github.com/mswider/sentry`)
 		{/if}
     </div>
 </nav>
-<slot>
-</slot>
+
+{#if data.status === 200}
+	<slot>
+	</slot>
+{/if}
+
+<dialog class="modal modal-bottom sm:modal-middle" use:focus>
+	<div class="modal-box">
+		<h3 class="text-lg font-bold">Something went wrong</h3>
+		<p class="py-4">{'message' in data.data && data.data.message}{#if data.status === 500}&nbsp;(network error){/if}</p>
+		<div class="modal-action">
+			<button class="btn btn-neutral" on:click={() => window.location.reload()}>Reload</button>
+		</div>
+	</div>
+</dialog>
