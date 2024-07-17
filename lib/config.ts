@@ -2,12 +2,13 @@ interface ConfigSkeleton {
     version: `${number}.${number}` | number;
 }
 
+export type ClientType = 'server' | 'laptop' | 'desktop';
 export interface ConfigV0 extends ConfigSkeleton {
     version: 0;
     desktops: {
         displayName: string;
         websocketPath: string;
-        clientType?: 'server' | 'laptop' | 'desktop';
+        clientType?: ClientType;
     }[];
 }
 

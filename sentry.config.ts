@@ -8,5 +8,13 @@ export default buildConfig({
         displayName: 'My Computer',
         websocketPath: '/connections/computer0',
         clientType: 'desktop'
+    }, {
+        displayName: 'Virtual Machine',
+        websocketPath: '/connections/computer1',
+        clientType: 'server'
+    }, {
+        displayName: 'MacBook Pro',
+        websocketPath: '/connections/computer2',
+        clientType: 'laptop'
     }]
 });
