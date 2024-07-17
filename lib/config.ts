@@ -7,7 +7,7 @@ export interface ConfigV0 extends ConfigSkeleton {
     version: 0;
     desktops: {
         displayName: string;
-        websocketPath: string;
+        id: string;
         clientType?: ClientType;
     }[];
 }

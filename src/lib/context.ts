@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 export interface ConfigData {
     desktops: {
         displayName: string;
-        websocketPath: string;
+        id: string;
         clientType?: 'server' | 'laptop' | 'desktop';
     }[];
 }
