@@ -1,6 +1,6 @@
 {
 	"name": "sentry",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"private": true,
 	"scripts": {
 		"config": "tsx lib/buildHelper.ts",
@@ -29,7 +29,8 @@
 		"tslib": "^2.4.1",
 		"tsx": "^4.16.2",
 		"typescript": "^5.0.0",
-		"vite": "^5.0.3"
+		"vite": "^5.0.3",
+		"wrangler": "^3.70.0"
 	},
 	"type": "module"
 }
