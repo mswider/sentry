@@ -11,5 +11,19 @@ export interface ConfigV0 extends ConfigSkeleton {
         clientType?: ClientType;
     }[];
 }
+export interface ConfigV1 extends ConfigSkeleton {
+    version: 1;
+    portals: {
+        displayName: string;
+        id: string;
+        path: string;
+    }[];
+    desktops: {
+        displayName: string;
+        id: string;
+        portal: string;
+        clientType?: ClientType;
+    }[];
+}
 
-export type AnyConfig = ConfigV0 | (ConfigSkeleton & Record<string, any>);
+export type AnyConfig = ConfigV0 | ConfigV1 | (ConfigSkeleton & Record<string, any>);

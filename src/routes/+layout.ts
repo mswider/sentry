@@ -19,19 +19,25 @@ export const load: LayoutLoad = async ({ fetch }): Promise<LoadValue> => {
         const req = await fetch(`${base}/config.json`);
         if (!req.ok) throw new Error(`HTTP ${req.status}`);
 
+        let data: AnyConfig;
         try {
-            const data: AnyConfig = await req.json();
-            return {
-                status: 200,
-                data: {
-                    config: {
-                        desktops: data.desktops
-                    }
-                }
-            };
+            data = await req.json();
         } catch (e) {
             throw new Error('Config file is not valid JSON');
         }
+
+        if (data.version !== 1) {
+            throw new Error(`Config version ${data.version} is unsupported. Please migrate to version 1`);
+        }
+
+        return {
+            status: 200,
+            data: {
+                config: {
+                    desktops: data.desktops
+                }
+            }
+        };
     } catch (e) {
         const isNetError = e instanceof Error && e.name === 'TypeError';
         if (isNetError) console.error(e);

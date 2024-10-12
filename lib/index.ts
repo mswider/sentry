@@ -1,5 +1,5 @@
-import { ConfigV0 } from "./config";
+import { ConfigV1 } from "./config";
 
-export function buildConfig(config: ConfigV0) {
+export function buildConfig(config: ConfigV1) {
     return config;
 }

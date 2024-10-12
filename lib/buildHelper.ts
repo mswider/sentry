@@ -6,6 +6,10 @@ const configOutputPath = path.join(path.dirname(import.meta.dirname), 'static', 
 const configOutput = JSON.stringify(config)
 
 try {
+    if (config.version !== 1) {
+        throw new Error(`version error: sentry.config.ts version ${config.version} is unsupported`)
+    }
+
     await fs.writeFile(configOutputPath, configOutput)
     console.log('Saved')
 } catch (error) {
