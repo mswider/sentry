@@ -7,11 +7,13 @@ export default buildConfig({
     portals: [{
         displayName: 'Home',
         id: 'home',
-        path: '78d77df9-7af6-411b-8c8a-19c3c97ce17b.cfargotunnel.com/sockets/'
+        hostname: 'portal-home.example.com',
+        path: '/sockets/'
     }, {
         displayName: 'University',
         id: 'uni',
-        path: '96727994-8f81-46de-860d-0e7f6681483d.cfargotunnel.com/sockets/'
+        hostname: 'portal-uni.example.com',
+        path: '/sockets/'
     }],
     desktops: [{
         displayName: 'Home Server',

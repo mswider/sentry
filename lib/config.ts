@@ -16,7 +16,8 @@ export interface ConfigV1<PortalID extends string> extends ConfigSkeleton {
     portals: {
         displayName: string;
         id: PortalID;
-        path: string;
+        hostname: string;
+        path?: string;
     }[];
     desktops: {
         displayName: string;

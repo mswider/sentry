@@ -34,6 +34,7 @@ export const load: LayoutLoad = async ({ fetch }): Promise<LoadValue> => {
             status: 200,
             data: {
                 config: {
+                    portals: data.portals,
                     desktops: data.desktops
                 }
             }
