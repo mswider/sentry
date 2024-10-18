@@ -1,4 +1,5 @@
-# sentry
+<h1><img src="https://github.com/user-attachments/assets/9f5d8a63-797a-47a9-a34b-e067ab526cc6" alt="Sentry logo" height="32" valign="middle" /> Sentry</h1>
+
 > A portal to all of your desktops, everywhere
 
 ![screenshot](https://github.com/user-attachments/assets/f1db2162-be5b-43b8-b5ba-048956371518#gh-light-mode-only)
