@@ -11,3 +11,6 @@
 - **Stateless**: Static files are deployed to Cloudflare Pages, accessible forever
 - **Secure**: Put Sentry behind Cloudflare Access for added layers of protection
 - **Private**: You never need to forward any ports to the public internet
+
+## Getting Started
+Check out the [setup guide](docs/setup.md)
