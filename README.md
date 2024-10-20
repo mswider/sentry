@@ -14,3 +14,6 @@
 
 ## Getting Started
 Check out the [setup guide](docs/setup.md)
+
+## Motivations
+Purdy, K. (2024, May 15). [RealVNC is dropping its “Home” plan and barely noting its free “Lite” option.](https://arstechnica.com/gadgets/2024/05/realvnc-is-dropping-its-home-plan-and-barely-noting-its-free-lite-option/) _Ars Technica_
